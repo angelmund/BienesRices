@@ -1,0 +1,50 @@
+/** Media Queries **/
+@mixin telefono {
+    @media (min-width: #{$telefono}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+//mixis, son funciones que se pueden reutilizar en diferentes partes del código
+//se pueden pasar argumentos a los mixins
+//se pueden pasar argumentos por defecto
+//se pueden pasar argumentos opcionales
+//se pueden pasar argumentos con nombre
+
+@mixin botones($color, $color-hover) {
+    border: none;
+    color: $blanco;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 6rem;
+    //pone la letra en mayúsculas
+    text-transform: uppercase;
+    //pone la letra en negrita
+    font-weight: $bold;
+    background-color: $amarillo; /* Color base del botón */
+    transition: box-shadow 0.3s ease-in-out; /* Transición suave del efecto de sombra */
+
+    &:hover {
+        background-color: $color;
+        color: $color-hover;
+        box-shadow: 0px 8px 16px rgba(255, 205, 3, 0.941); /* Aumenta el desplazamiento y la opacidad de la sombra */
+    }
+}

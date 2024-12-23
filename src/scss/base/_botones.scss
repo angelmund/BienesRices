@@ -1,0 +1,8 @@
+.boton-amarillo{
+    @include botones($amarillo, $gris);
+}
+
+.boton-verde{
+    margin-top: 1rem;
+    @include botones($verde, $gris);
+}
