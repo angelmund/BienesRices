@@ -1,8 +1,21 @@
-.boton-amarillo{
-    @include botones($amarillo, $gris);
+.boton-amarillo {
+    @include boton($amarillo, $verde);
 }
 
-.boton-verde{
+.boton-verde {
     margin-top: 1rem;
-    @include botones($verde, $gris);
+    @include boton($verde, $amarillo);
+}
+
+.boton-rojo {
+    margin-top: 1rem;
+    display: block;
+    width: 86%;
+    @include boton($rojo, $rojoOscuro);
+}
+
+.boton-verde-block {
+    margin-top: 1rem;
+    display: block;
+    @include boton($amarillo, $verde);
 }

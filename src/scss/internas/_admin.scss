@@ -1,0 +1,55 @@
+.alerta{
+    padding: .5rem;
+    text-align: center;
+    color: $blanco;
+    font-weight: $bold;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    margin-left: 70rem;
+    max-width: 20%;
+    &.error{
+        background-color: $rojo;
+    }
+}
+
+.swal2-title{
+    color: $verde !important;
+}
+
+table.propiedades {
+    margin: 4rem auto; // Centra la tabla horizontalmente y añade margen superior
+    width: 80%; // Ajusta el ancho de la tabla según sea necesario
+    border-spacing: 0;
+    background-color: $grisOscuro;
+
+    tbody {
+        color: $blanco;
+        text-align: center;
+
+        // td {
+        //     padding: 2rem;
+        // }
+    }
+
+    thead {
+        color: $blanco;
+        text-align: center;
+
+        th {
+            color: $blanco;
+            padding: 2rem;
+        }
+        td {
+            color: $blanco;
+        }
+    }
+
+    .imagen-tabla {
+        width: 10rem;
+    }
+}
+
+.imagen-small{
+    width: 40rem;
+    height: 40rem;
+}

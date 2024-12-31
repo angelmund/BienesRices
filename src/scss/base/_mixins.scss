@@ -28,23 +28,21 @@
 //se pueden pasar argumentos opcionales
 //se pueden pasar argumentos con nombre
 
-@mixin botones($color, $color-hover) {
+@mixin boton($color, $color-hover) {
     border: none;
     color: $blanco;
     padding: 14px 28px;
     cursor: pointer;
     border-radius: 5px;
     margin-left: 6rem;
-    //pone la letra en mayúsculas
     text-transform: uppercase;
-    //pone la letra en negrita
     font-weight: $bold;
-    background-color: $amarillo; /* Color base del botón */
-    transition: box-shadow 0.3s ease-in-out; /* Transición suave del efecto de sombra */
+    background-color: $color; /* Usar el color pasado como argumento */
+    transition: box-shadow 0.3s ease-in-out;
 
     &:hover {
-        background-color: $color;
-        color: $color-hover;
-        box-shadow: 0px 8px 16px rgba(255, 205, 3, 0.941); /* Aumenta el desplazamiento y la opacidad de la sombra */
+        background-color: $color-hover;
+        color: $blanco;
+        box-shadow: 0px 8px 16px rgba(255, 205, 3, 0.941);
     }
 }
