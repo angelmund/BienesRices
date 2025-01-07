@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       //subir imagen
       move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen); //mueve la imagen a la carpeta, toma el nombre temporal y el nombre original
-    }else{
+    } else {
       $nombreImagen = $propiedad['imagen'];
     }
 
@@ -166,6 +166,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 require '../../includes/funciones.php';
+$auth = estaAutenticado();
+if (!$auth) {
+  header('Location: /login.php');
+}
 incluirTemplate('header');
 
 ?>

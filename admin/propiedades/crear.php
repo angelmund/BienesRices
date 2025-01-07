@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     //subir imagen
     move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen); //mueve la imagen a la carpeta, toma el nombre temporal y el nombre original
- 
+
     //insertar en la base de datos
     $query = "INSERT INTO propiedades (titulo, precio,imagen ,descripcion, habitaciones, sanitario, estacionamiento, created_at, updated_at, vendedores_id) VALUES ('$titulo', '$precio','$nombreImagen' ,'$descripcion', '$habitaciones', '$sanitarios', '$estacionamiento', NOW(), NOW(), '$vendedores_id')";
     $resultado = mysqli_query($db, $query);
@@ -134,6 +134,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 require '../../includes/funciones.php';
+$auth = estaAutenticado();
+if (!$auth) {
+  header('Location: /login.php');
+}
+
 incluirTemplate('header');
 
 ?>
